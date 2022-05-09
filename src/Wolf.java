@@ -6,9 +6,11 @@ public class Wolf extends Predator{
         this.speed = 3;
         this.maxCountKilogramToSaturate = 8;
         this.countTackToAlive = 10;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -18,7 +20,7 @@ public class Wolf extends Predator{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

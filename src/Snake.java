@@ -6,10 +6,12 @@ public class Snake extends Predator{
         this.speed = 1;
         this.maxCountKilogramToSaturate = 0.3;
         this.countTackToAlive = 15;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
 
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -19,7 +21,7 @@ public class Snake extends Predator{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

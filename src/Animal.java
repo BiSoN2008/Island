@@ -1,3 +1,5 @@
+import java.util.Collection;
+
 public abstract class Animal {
     protected double weight;
 
@@ -9,14 +11,27 @@ public abstract class Animal {
 
     protected int countTackToAlive;
 
+    protected double healthCount;
+
+    protected int countTackWithoutFood;
 
 
-    public abstract void eat();
+
+    public abstract void eat(Cell cell);
 
     public abstract void move();
 
-    public abstract  void reproduce();
+    public abstract  void reproduce(Cell cell);
 
     public abstract void dead();
+
+    public static boolean findFood(Collection<?> arrayList, Class clazz){
+        for(Object o :arrayList){
+            if (o !=null && o.getClass() == clazz){
+                return true;
+            }
+        }
+        return false;
+    }
 
 }

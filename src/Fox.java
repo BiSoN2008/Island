@@ -6,10 +6,12 @@ public class Fox extends Predator{
         this.speed = 3;
         this.maxCountKilogramToSaturate = 1;
         this.countTackToAlive = 8;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
 
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -19,7 +21,7 @@ public class Fox extends Predator{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

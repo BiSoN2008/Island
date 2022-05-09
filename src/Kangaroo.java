@@ -6,10 +6,12 @@ public class Kangaroo extends Herbivorous{
         this.speed = 2;
         this.maxCountKilogramToSaturate = 7;
         this.countTackToAlive = 8;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
 
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -19,7 +21,7 @@ public class Kangaroo extends Herbivorous{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

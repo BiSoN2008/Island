@@ -6,10 +6,12 @@ public class Duck extends Herbivorous{
         this.speed = 1;
         this.maxCountKilogramToSaturate = 0.15;
         this.countTackToAlive = 4;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
 
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -19,7 +21,7 @@ public class Duck extends Herbivorous{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

@@ -6,11 +6,15 @@ public class Bear extends Predator{
         this.speed = 2;
         this.maxCountKilogramToSaturate = 38;
         this.countTackToAlive = 15;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
 
     }
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
+        if (findFood(cell.getCell(),Animal.class)){
 
+        }
     }
 
     @Override
@@ -19,7 +23,7 @@ public class Bear extends Predator{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

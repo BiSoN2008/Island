@@ -6,10 +6,12 @@ public class Sheep extends Herbivorous  {
         this.speed = 1;
         this.maxCountKilogramToSaturate = 7;
         this.countTackToAlive = 5;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
 
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -19,7 +21,7 @@ public class Sheep extends Herbivorous  {
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 

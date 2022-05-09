@@ -6,9 +6,11 @@ public class Eagle extends Predator{
         this.speed = 4;
         this.maxCountKilogramToSaturate = 1;
         this.countTackToAlive = 5;
+        this.healthCount = 100;
+        this.countTackWithoutFood = 0;
     }
     @Override
-    public void eat() {
+    public void eat(Cell cell) {
 
     }
 
@@ -18,7 +20,7 @@ public class Eagle extends Predator{
     }
 
     @Override
-    public void reproduce() {
+    public void reproduce(Cell cell) {
 
     }
 
