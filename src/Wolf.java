@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Wolf extends Predator{
 
     public Wolf(){
@@ -5,10 +8,25 @@ public class Wolf extends Predator{
         this.maxCountInCage = 30;
         this.speed = 3;
         this.maxCountKilogramToSaturate = 8;
-        this.countTackToAlive = 10;
         this.healthCount = 100;
-        this.countTackWithoutFood = 0;
+        addDiet();
     }
+
+    private Map<Class,Integer> addDiet(){
+        diet = new HashMap<>();
+        diet.put(Fox.class,15);
+        diet.put(Horse.class,10);
+        diet.put(Deer.class,15);
+        diet.put(Rabbit.class,60);
+        diet.put(Mouse.class,80);
+        diet.put(Goat.class,60);
+        diet.put(Sheep.class,70);
+        diet.put(Boar.class,15);
+        diet.put(Buffalo.class,10);
+        diet.put(Duck.class,40);
+        return diet;
+    }
+
     @Override
     public void eat(Cell cell) {
 

@@ -1,13 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Duck extends Herbivorous{
 
     public Duck(){
         this.weight = 1;
-        this.maxCountInCage = 500;
-        this.speed = 1;
+        this.maxCountInCage = 200;
+        this.speed = 4;
         this.maxCountKilogramToSaturate = 0.15;
-        this.countTackToAlive = 4;
         this.healthCount = 100;
-        this.countTackWithoutFood = 0;
+        addDiet();
+    }
+
+    private Map<Class,Integer> addDiet(){
+        diet = new HashMap<>();
+        diet.put(Plants.class,100);
+        return diet;
     }
 
     @Override

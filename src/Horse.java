@@ -1,13 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Horse extends Herbivorous {
 
     public Horse(){
-        this.weight = 300;
-        this.maxCountInCage = 23;
-        this.speed = 3;
-        this.maxCountKilogramToSaturate = 45;
-        this.countTackToAlive = 5;
+        this.weight = 400;
+        this.maxCountInCage = 20;
+        this.speed = 4;
+        this.maxCountKilogramToSaturate = 60;
         this.healthCount = 100;
-        this.countTackWithoutFood = 0;
+        addDiet();
+    }
+
+    private Map<Class,Integer> addDiet(){
+        diet = new HashMap<>();
+        diet.put(Plants.class,100);
+        return diet;
     }
     @Override
     public void eat(Cell cell) {

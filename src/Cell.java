@@ -1,17 +1,28 @@
 import java.util.ArrayList;
 
 public class Cell {
-    private ArrayList<Object> cell;
+    private ArrayList<Animal> animalList;
+    private ArrayList<Plants> plantsList;
 
     public Cell() {
-        this.cell = new ArrayList<>();
+        this.animalList = new ArrayList<>();
+        this.plantsList = new ArrayList<>();
     }
 
-    public ArrayList<Object> getCell() {
-        return cell;
+
+    public ArrayList<Animal> getAnimalList() {
+        return animalList;
     }
 
-    public void setCell(ArrayList<Object> cell) {
-        this.cell = cell;
+    public void setAnimalList(ArrayList<Animal> animalList) {
+        this.animalList = animalList;
+    }
+
+    public ArrayList<Plants> getPlantsList() {
+        return plantsList;
+    }
+
+    public void setPlantsList(ArrayList<Plants> plantsList) {
+        this.plantsList = plantsList;
     }
 }

@@ -1,13 +1,21 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Deer extends Herbivorous{
 
     public Deer(){
-        this.weight = 170;
-        this.maxCountInCage = 41;
-        this.speed = 3;
-        this.maxCountKilogramToSaturate = 26;
-        this.countTackToAlive = 4;
+        this.weight = 300;
+        this.maxCountInCage = 20;
+        this.speed = 4;
+        this.maxCountKilogramToSaturate = 50;
         this.healthCount = 100;
-        this.countTackWithoutFood = 0;
+        addDiet();
+    }
+
+    private Map<Class,Integer> addDiet(){
+        diet = new HashMap<>();
+        diet.put(Plants.class,100);
+        return diet;
     }
 
     @Override

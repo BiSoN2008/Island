@@ -1,13 +1,24 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Fox extends Predator{
 
     public Fox(){
-        this.weight = 4;
-        this.maxCountInCage = 50;
-        this.speed = 3;
-        this.maxCountKilogramToSaturate = 1;
-        this.countTackToAlive = 8;
+        this.weight = 8;
+        this.maxCountInCage = 30;
+        this.speed = 2;
+        this.maxCountKilogramToSaturate = 2;
         this.healthCount = 100;
-        this.countTackWithoutFood = 0;
+        addDiet();
+    }
+
+    private Map<Class,Integer> addDiet(){
+        diet = new HashMap<>();
+        diet.put(Rabbit.class,70);
+        diet.put(Mouse.class,90);
+        diet.put(Duck.class,60);
+        diet.put(Caterpillar.class,40);
+        return diet;
     }
 
     @Override

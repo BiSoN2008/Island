@@ -1,14 +1,15 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Goat extends Herbivorous{
+public class Rabbit extends Herbivorous{
 
-    public Goat(){
-        this.weight = 60;
-        this.maxCountInCage = 140;
-        this.speed = 3;
-        this.maxCountKilogramToSaturate = 15;
+    public Rabbit(){
+        this.weight = 2;
+        this.maxCountInCage = 150;
+        this.speed = 2;
+        this.maxCountKilogramToSaturate = 0.45;
         this.healthCount = 100;
+        addDiet();
     }
 
     private Map<Class,Integer> addDiet(){

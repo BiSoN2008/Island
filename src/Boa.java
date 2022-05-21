@@ -1,19 +1,25 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Goat extends Herbivorous{
+public class Boa extends Predator{
 
-    public Goat(){
-        this.weight = 60;
-        this.maxCountInCage = 140;
-        this.speed = 3;
-        this.maxCountKilogramToSaturate = 15;
+    public Boa(){
+        this.weight = 15;
+        this.maxCountInCage = 30;
+        this.speed = 1;
+        this.maxCountKilogramToSaturate = 3;
         this.healthCount = 100;
+        addDiet();
     }
 
     private Map<Class,Integer> addDiet(){
         diet = new HashMap<>();
-        diet.put(Plants.class,100);
+        diet.put(Fox.class,15);
+        diet.put(Deer.class,5);
+        diet.put(Rabbit.class,20);
+        diet.put(Mouse.class,40);
+        diet.put(Boar.class,5);
+        diet.put(Duck.class,10);
         return diet;
     }
 
