@@ -1,7 +1,9 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
-public class Boar extends Herbivorous{
+public class Boar extends Herbivorous implements Omnivorous{
 
     public Boar(){
         this.weight = 400;
@@ -11,17 +13,19 @@ public class Boar extends Herbivorous{
         this.healthCount = 100;
     }
 
-    private Map<Class,Integer> addDiet(){
+    private Map<String,Integer> addDiet(){
         diet = new HashMap<>();
-        diet.put(Mouse.class,50);
-        diet.put(Caterpillar.class,90);
-        diet.put(Plants.class,100);
+        diet.put("Mouse",50);
+        diet.put("Caterpillar",90);
+        diet.put("Plants",100);
         return diet;
     }
 
     @Override
     public void eat(Cell cell) {
-
+       super.eat(cell);
+       if (healthCount < 100)
+           specialEat(cell,this);
     }
 
     @Override

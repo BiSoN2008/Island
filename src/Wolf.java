@@ -12,24 +12,19 @@ public class Wolf extends Predator{
         addDiet();
     }
 
-    private Map<Class,Integer> addDiet(){
+    private Map<String,Integer> addDiet(){
         diet = new HashMap<>();
-        diet.put(Fox.class,15);
-        diet.put(Horse.class,10);
-        diet.put(Deer.class,15);
-        diet.put(Rabbit.class,60);
-        diet.put(Mouse.class,80);
-        diet.put(Goat.class,60);
-        diet.put(Sheep.class,70);
-        diet.put(Boar.class,15);
-        diet.put(Buffalo.class,10);
-        diet.put(Duck.class,40);
+        diet.put("Fox",15);
+        diet.put("Horse",10);
+        diet.put("Deer",15);
+        diet.put("Rabbit",60);
+        diet.put("Mouse",80);
+        diet.put("Goat",60);
+        diet.put("Sheep",70);
+        diet.put("Boar",15);
+        diet.put("Buffalo",10);
+        diet.put("Duck",40);
         return diet;
-    }
-
-    @Override
-    public void eat(Cell cell) {
-
     }
 
     @Override

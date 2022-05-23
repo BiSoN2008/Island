@@ -11,15 +11,10 @@ public class Goat extends Herbivorous{
         this.healthCount = 100;
     }
 
-    private Map<Class,Integer> addDiet(){
+    private Map<String,Integer> addDiet(){
         diet = new HashMap<>();
-        diet.put(Plants.class,100);
+        diet.put("Plants",100);
         return diet;
-    }
-
-    @Override
-    public void eat(Cell cell) {
-
     }
 
     @Override

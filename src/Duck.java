@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class Duck extends Herbivorous{
+public class Duck extends Herbivorous implements Omnivorous{
 
     public Duck(){
         this.weight = 1;
@@ -12,15 +12,18 @@ public class Duck extends Herbivorous{
         addDiet();
     }
 
-    private Map<Class,Integer> addDiet(){
+    private Map<String,Integer> addDiet(){
         diet = new HashMap<>();
-        diet.put(Plants.class,100);
+        diet.put("Caterpillar",90);
+        diet.put("Plants",100);
         return diet;
     }
 
     @Override
     public void eat(Cell cell) {
-
+        super.eat(cell);
+        if (healthCount < 100)
+        specialEat(cell,this);
     }
 
     @Override

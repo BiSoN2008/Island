@@ -12,21 +12,17 @@ public class Boa extends Predator{
         addDiet();
     }
 
-    private Map<Class,Integer> addDiet(){
+    private Map<String,Integer> addDiet(){
         diet = new HashMap<>();
-        diet.put(Fox.class,15);
-        diet.put(Deer.class,5);
-        diet.put(Rabbit.class,20);
-        diet.put(Mouse.class,40);
-        diet.put(Boar.class,5);
-        diet.put(Duck.class,10);
+        diet.put("Fox",15);
+        diet.put("Deer",5);
+        diet.put("Rabbit",20);
+        diet.put("Mouse",40);
+        diet.put("Boar",5);
+        diet.put("Duck",10);
         return diet;
     }
 
-    @Override
-    public void eat(Cell cell) {
-
-    }
 
     @Override
     public void move() {

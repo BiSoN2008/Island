@@ -1,6 +1,7 @@
 import java.util.Map;
 
 public abstract class Animal {
+
     protected double weight;
 
     protected int maxCountInCage;
@@ -11,7 +12,7 @@ public abstract class Animal {
 
     protected double healthCount;
 
-    protected Map<Class, Integer> diet;
+    protected Map<String, Integer> diet;
 
     public abstract void eat(Cell cell);
 
