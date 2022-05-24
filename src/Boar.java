@@ -11,6 +11,8 @@ public class Boar extends Herbivorous implements Omnivorous{
         this.speed = 2;
         this.maxCountKilogramToSaturate = 50;
         this.healthCount = 100;
+        this.maxCountChildren = 7;
+        this.chanceOfReproduction = 60;
     }
 
     private Map<String,Integer> addDiet(){
@@ -30,16 +32,6 @@ public class Boar extends Herbivorous implements Omnivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

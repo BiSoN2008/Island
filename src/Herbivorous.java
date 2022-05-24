@@ -51,13 +51,13 @@ public abstract class Herbivorous extends Animal {
                             }
 
                         } else {
-
-                            healthCount -= 10;
+                            this.healthCount -= 10;
                         }
                     }
                 }
             }
-        }
+            healthCount -= 10;
+        } else healthCount -= 10;
     }
 }
 

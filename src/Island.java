@@ -1,44 +1,17 @@
-import java.util.ArrayList;
-import java.util.Map;
-
 public class Island {
-    public static void main(String[] args) {
-        Cell cell = new Cell();
-        ArrayList<Plants> list = new ArrayList<>();
-        ArrayList<Animal> animals = new ArrayList<>();
-        list.add(new Plants());
-        list.add(new Plants());
+    private int height;
+    private int width;
+    private Cell[][] island;
 
-        animals.add(new Caterpillar());
-        animals.add(new Caterpillar());
-        animals.add(new Caterpillar());
-        animals.add(new Caterpillar());
-        cell.setPlantsList(list);
-        cell.setAnimalList(animals);
-
-        Mouse mouse = new Mouse();
-        System.out.println("Health start: " + mouse.healthCount);
-        mouse.eat(cell);
-        System.out.println("Health final: " + mouse.healthCount);
-
-
-        for (Map.Entry<String, Integer> entry : StatisticClass.eatenPlantsCount.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-
-            System.out.println("Count " + key + " eaten - " + value);
+    public Island(int height, int width) {
+       this.island = new Cell[height][width];
+        for (int i = 0; i <height ; i++) {
+            for (int j = 0; j < width; j++) {
+                island[i][j] = new Cell();
+                island[i][j].setCellPositionHeight(i);
+                island[i][j].setCellPositionWidth(j);
+            }
         }
-        for (Map.Entry<String, Integer> entry : StatisticClass.deadCountAnimals.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-
-            System.out.println("Count " + key + " eaten - " + value);
-        }
-
-        System.out.println("Plants size = "+cell.getPlantsList().size());
-        System.out.println("Animals size = "+cell.getAnimalList().size());
-
-
     }
 
 }

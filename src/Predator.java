@@ -45,6 +45,10 @@ public abstract class Predator extends Animal {
                     }
                 }
             }
-        }
+            healthCount -= 10;
+        } else
+           healthCount -= 10;
+
+
     }
 }

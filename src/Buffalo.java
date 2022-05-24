@@ -9,6 +9,8 @@ public class Buffalo extends Herbivorous{
         this.speed = 3;
         this.maxCountKilogramToSaturate = 100;
         this.healthCount = 100;
+        this.maxCountChildren = 2;
+        this.chanceOfReproduction = 45;
         addDiet();
     }
 
@@ -25,16 +27,6 @@ public class Buffalo extends Herbivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

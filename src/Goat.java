@@ -9,6 +9,9 @@ public class Goat extends Herbivorous{
         this.speed = 3;
         this.maxCountKilogramToSaturate = 15;
         this.healthCount = 100;
+        this.maxCountChildren = 3;
+        this.chanceOfReproduction = 75;
+        addDiet();
     }
 
     private Map<String,Integer> addDiet(){
@@ -19,16 +22,6 @@ public class Goat extends Herbivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

@@ -9,6 +9,8 @@ public class Wolf extends Predator{
         this.speed = 3;
         this.maxCountKilogramToSaturate = 8;
         this.healthCount = 100;
+        this.maxCountChildren = 3;
+        this.chanceOfReproduction = 80;
         addDiet();
     }
 
@@ -29,16 +31,6 @@ public class Wolf extends Predator{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

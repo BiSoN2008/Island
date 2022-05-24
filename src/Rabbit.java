@@ -9,6 +9,8 @@ public class Rabbit extends Herbivorous{
         this.speed = 2;
         this.maxCountKilogramToSaturate = 0.45;
         this.healthCount = 100;
+        this.maxCountChildren = 8;
+        this.chanceOfReproduction = 100;
         addDiet();
     }
 
@@ -20,16 +22,6 @@ public class Rabbit extends Herbivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

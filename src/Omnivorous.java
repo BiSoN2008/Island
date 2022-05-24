@@ -3,8 +3,8 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
-public interface Omnivorous{
-    default void  specialEat(Cell cell,Animal animal){
+public interface Omnivorous {
+    default void specialEat(Cell cell, Animal animal) {
         ArrayList<Animal> animalList = cell.getAnimalList();
         ArrayList<Animal> tempList = new ArrayList<>(animalList);
         int chanceToEat = ThreadLocalRandom.current().nextInt(0, 100);
@@ -22,7 +22,7 @@ public interface Omnivorous{
                             if (animalList.get(i).weight >= animal.maxCountKilogramToSaturate) {
                                 animal.healthCount = 100;
                             } else {
-                                double percentOfSaturate = (animalList.get(i).weight / animal.maxCountKilogramToSaturate ) * 100;
+                                double percentOfSaturate = (animalList.get(i).weight / animal.maxCountKilogramToSaturate) * 100;
                                 animal.healthCount += percentOfSaturate;
                                 if (animal.healthCount > 100)
                                     animal.healthCount = 100;
@@ -42,8 +42,8 @@ public interface Omnivorous{
                         }
                     }
                 }
-            }
-        }
+            }            animal.healthCount -= 10;
+        } else animal.healthCount -= 10;
     }
 
 }

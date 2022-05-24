@@ -9,6 +9,8 @@ public class Duck extends Herbivorous implements Omnivorous{
         this.speed = 4;
         this.maxCountKilogramToSaturate = 0.15;
         this.healthCount = 100;
+        this.maxCountChildren = 6;
+        this.chanceOfReproduction = 70;
         addDiet();
     }
 
@@ -28,16 +30,6 @@ public class Duck extends Herbivorous implements Omnivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

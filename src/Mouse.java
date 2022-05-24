@@ -7,8 +7,10 @@ public class Mouse extends Herbivorous implements Omnivorous{
         this.weight = 0.05;
         this.maxCountInCage = 500;
         this.speed = 1;
-        this.maxCountKilogramToSaturate = 3;
-        this.healthCount = 10;
+        this.maxCountKilogramToSaturate = 0.015;
+        this.healthCount = 100;
+        this.maxCountChildren = 15;
+        this.chanceOfReproduction = 80;
         addDiet();
     }
 
@@ -28,16 +30,6 @@ public class Mouse extends Herbivorous implements Omnivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

@@ -9,6 +9,8 @@ public class Boa extends Predator{
         this.speed = 1;
         this.maxCountKilogramToSaturate = 3;
         this.healthCount = 100;
+        this.maxCountChildren = 10;
+        this.chanceOfReproduction = 50;
         addDiet();
     }
 
@@ -26,16 +28,6 @@ public class Boa extends Predator{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

@@ -9,6 +9,8 @@ public class Deer extends Herbivorous{
         this.speed = 4;
         this.maxCountKilogramToSaturate = 50;
         this.healthCount = 100;
+        this.maxCountChildren = 1;
+        this.chanceOfReproduction = 80;
         addDiet();
     }
 
@@ -21,16 +23,6 @@ public class Deer extends Herbivorous{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

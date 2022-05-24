@@ -8,7 +8,9 @@ public class Eagle extends Predator{
         this.maxCountInCage = 20;
         this.speed = 3;
         this.maxCountKilogramToSaturate = 1;
-        this.healthCount = 100;
+        this.healthCount = 50;
+        this.maxCountChildren = 4;
+        this.chanceOfReproduction = 90;
         addDiet();
     }
 
@@ -23,16 +25,6 @@ public class Eagle extends Predator{
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }

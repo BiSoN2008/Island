@@ -8,7 +8,9 @@ public class Horse extends Herbivorous {
         this.maxCountInCage = 20;
         this.speed = 4;
         this.maxCountKilogramToSaturate = 60;
-        this.healthCount = 95;
+        this.healthCount = 100;
+        this.maxCountChildren = 2;
+        this.chanceOfReproduction = 95;
         addDiet();
     }
 
@@ -20,16 +22,6 @@ public class Horse extends Herbivorous {
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void reproduce(Cell cell) {
-
-    }
-
-    @Override
-    public void dead() {
 
     }
 }
