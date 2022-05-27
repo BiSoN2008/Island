@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public abstract class Predator extends Animal {
@@ -14,10 +14,10 @@ public abstract class Predator extends Animal {
         if ((healthCount < 100) && (healthCount > 0)) {
             for (Map.Entry<String, Integer> entry : diet.entrySet()) {
                 var key = entry.getKey();
-                Integer value = entry.getValue();
+                Integer chanceOfBeingEaten = entry.getValue();
                 for (int i = 0; i < animalList.size(); i++) {
                     if (animalList.get(i).getClass().getName().equals(key)) {
-                        if (chanceToEat < value) {
+                        if (chanceToEat < chanceOfBeingEaten) {
                             indexEatenObject = i;
                             tempAnimal = animalList.get(i);
                             if (animalList.get(i).weight >= maxCountKilogramToSaturate) {
@@ -35,10 +35,8 @@ public abstract class Predator extends Animal {
                             }
 
                             tempList.removeIf(nextAnimal -> nextAnimal.equals(tempAnimal));
-
                             cell.setAnimalList(tempList);
                             return;
-
                         } else {
                             healthCount -= 10;
                         }
@@ -47,8 +45,6 @@ public abstract class Predator extends Animal {
             }
             healthCount -= 10;
         } else
-           healthCount -= 10;
-
-
+            healthCount -= 10;
     }
 }

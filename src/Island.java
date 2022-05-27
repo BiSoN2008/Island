@@ -4,6 +4,8 @@ public class Island {
     private Cell[][] island;
 
     public Island(int height, int width) {
+        this.height = height;
+        this.width = width;
        this.island = new Cell[height][width];
         for (int i = 0; i <height ; i++) {
             for (int j = 0; j < width; j++) {
@@ -14,4 +16,15 @@ public class Island {
         }
     }
 
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public Cell getCell(int x,int y){
+        return island[x][y];
+    }
 }

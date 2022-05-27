@@ -20,8 +20,6 @@ public class Caterpillar extends Herbivorous{
         return diet;
     }
 
-
-
     @Override
     public void move() {
 

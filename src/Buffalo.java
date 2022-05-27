@@ -21,11 +21,6 @@ public class Buffalo extends Herbivorous{
     }
 
     @Override
-    public void eat(Cell cell) {
-
-    }
-
-    @Override
     public void move() {
 
     }

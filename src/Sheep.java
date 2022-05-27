@@ -20,7 +20,6 @@ public class Sheep extends Herbivorous  {
         return diet;
     }
 
-
     @Override
     public void move() {
 

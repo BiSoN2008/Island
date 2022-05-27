@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Cell {
+public class Cell implements Runnable{
     private ArrayList<Animal> animalList;
     private ArrayList<Plants> plantsList;
     private int cellPositionHeight = -1;
@@ -9,6 +9,26 @@ public class Cell {
     public Cell() {
         this.animalList = new ArrayList<>();
         this.plantsList = new ArrayList<>();
+    }
+    @Override
+    public void run() {
+        ArrayList<Animal> tempList = new ArrayList<>(this.animalList);
+        for (int k = 0; k < animalList.size(); k++) {
+            if (this.animalList.get(k).healthCount < 0) {
+                animalList.get(k).dead();
+                tempList.remove(this.animalList.get(k));
+            }
+        }
+        this.setAnimalList(tempList);
+
+        for (int l = 0; l < this.animalList.size(); l++) {
+            this.animalList.get(l).eat(this);
+        }
+
+        tempList = new ArrayList<>(this.animalList);
+        for (int m = 0; m < tempList.size(); m++) {
+            tempList.get(m).reproduce(this);
+        }
     }
 
     public int getCellPositionHeight() {
@@ -42,4 +62,11 @@ public class Cell {
     public void setPlantsList(ArrayList<Plants> plantsList) {
         this.plantsList = plantsList;
     }
+
+
+
+
+
+
+
 }

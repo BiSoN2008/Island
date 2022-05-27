@@ -1,7 +1,9 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ThreadLocalRandom;
+
+//Для травоядных которые могут есть не только травку
 
 public interface Omnivorous {
     default void specialEat(Cell cell, Animal animal) {
