@@ -1,34 +1,17 @@
 import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class Cell implements Runnable{
+public class Cell {
     private ArrayList<Animal> animalList;
-    private ArrayList<Plants> plantsList;
+    private CopyOnWriteArrayList<Plants> plantsList;
+    private CopyOnWriteArrayList<Animal> thoseHoCameAnimal;
     private int cellPositionHeight = -1;
     private int cellPositionWidth = -1;
 
     public Cell() {
         this.animalList = new ArrayList<>();
-        this.plantsList = new ArrayList<>();
-    }
-    @Override
-    public void run() {
-        ArrayList<Animal> tempList = new ArrayList<>(this.animalList);
-        for (int k = 0; k < animalList.size(); k++) {
-            if (this.animalList.get(k).healthCount < 0) {
-                animalList.get(k).dead();
-                tempList.remove(this.animalList.get(k));
-            }
-        }
-        this.setAnimalList(tempList);
-
-        for (int l = 0; l < this.animalList.size(); l++) {
-            this.animalList.get(l).eat(this);
-        }
-
-        tempList = new ArrayList<>(this.animalList);
-        for (int m = 0; m < tempList.size(); m++) {
-            tempList.get(m).reproduce(this);
-        }
+        this.plantsList = new CopyOnWriteArrayList<>();
+        this.thoseHoCameAnimal = new CopyOnWriteArrayList<>();
     }
 
     public int getCellPositionHeight() {
@@ -55,18 +38,19 @@ public class Cell implements Runnable{
         this.animalList = animalList;
     }
 
-    public ArrayList<Plants> getPlantsList() {
+    public CopyOnWriteArrayList<Plants> getPlantsList() {
         return plantsList;
     }
 
-    public void setPlantsList(ArrayList<Plants> plantsList) {
+    public void setPlantsList(CopyOnWriteArrayList<Plants> plantsList) {
         this.plantsList = plantsList;
     }
 
+    public void setThoseHoCameAnimal(CopyOnWriteArrayList<Animal> thoseHoCameAnimal) {
+        this.thoseHoCameAnimal = thoseHoCameAnimal;
+    }
 
-
-
-
-
-
+    public CopyOnWriteArrayList<Animal> getThoseHoCameAnimal() {
+        return thoseHoCameAnimal;
+    }
 }

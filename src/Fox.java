@@ -8,7 +8,7 @@ public class Fox extends Predator{
         this.maxCountInCage = 30;
         this.speed = 2;
         this.maxCountKilogramToSaturate = 2;
-        this.healthCount = 45;
+        this.healthCount = 100;
         this.maxCountChildren = 5;
         this.chanceOfReproduction = 85;
         addDiet();
@@ -21,10 +21,5 @@ public class Fox extends Predator{
         diet.put("Duck",60);
         diet.put("Caterpillar",40);
         return diet;
-    }
-
-    @Override
-    public void move() {
-
     }
 }

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 //Для травоядных которые могут есть не только травку
@@ -41,11 +40,12 @@ public interface Omnivorous {
 
                         } else {
                             animal.healthCount -= 10;
+                            return;
                         }
                     }
                 }
-            }            animal.healthCount -= 10;
-        } else animal.healthCount -= 10;
+            }
+        } else animal.healthCount -=10;
     }
 
 }

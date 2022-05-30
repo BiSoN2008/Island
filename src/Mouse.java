@@ -27,9 +27,4 @@ public class Mouse extends Herbivorous implements Omnivorous{
         if (healthCount < 100)
             specialEat(cell,this);
     }
-
-    @Override
-    public void move() {
-
-    }
 }

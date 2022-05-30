@@ -24,7 +24,68 @@ public abstract class Animal {
 
     public abstract void eat(Cell cell);
 
-    public abstract void move();
+    public void move(Cell cell, Island island) {
+        CopyOnWriteArrayList<Animal> toMoveAnimalList = new CopyOnWriteArrayList<>();
+        ArrayList<Animal> tempAnimalList = new ArrayList<>(cell.getAnimalList());
+        int xPosition = cell.getCellPositionHeight();
+        int yPosition = cell.getCellPositionWidth();
+        int countSteps = ThreadLocalRandom.current().nextInt(0,speed);
+        int newXPosition;
+        int newYPosition;
+        TravelDirections travelDirection = TravelDirections.values()[ThreadLocalRandom.current().nextInt(TravelDirections.values().length)];
+        int chanceToMove = ThreadLocalRandom.current().nextInt(0, 100);
+        if (chanceToMove < 50) {
+            if (travelDirection == TravelDirections.DOWN) {
+                if (countSteps != 0){
+                    newXPosition = xPosition + countSteps;
+                    newYPosition = yPosition;
+                    if ((newXPosition < island.getHeight() && newXPosition >=0) && (newYPosition < island.getWidth() && newYPosition >=0)){
+                        toMoveAnimalList.add(this);
+                        island.getCell(newXPosition,newYPosition).setThoseHoCameAnimal(toMoveAnimalList);
+                        tempAnimalList.remove(this);
+                        cell.setAnimalList(tempAnimalList);
+                    }
+                }
+            }
+            if (travelDirection == TravelDirections.UP){
+                if (countSteps != 0){
+                    newXPosition = xPosition - countSteps;
+                    newYPosition = yPosition;
+                    if ((newXPosition < island.getHeight() && newXPosition >=0) && (newYPosition < island.getWidth() && newYPosition >=0)){
+                        toMoveAnimalList.add(this);
+                        island.getCell(newXPosition,newYPosition).setThoseHoCameAnimal(toMoveAnimalList);
+                        tempAnimalList.remove(this);
+                        cell.setAnimalList(tempAnimalList);
+                    }
+                }
+            }
+            if (travelDirection == TravelDirections.RIGHT){
+                if (countSteps != 0){
+                    newXPosition = xPosition;
+                    newYPosition = yPosition + countSteps;
+                    if ((newXPosition < island.getHeight() && newXPosition >=0) && (newYPosition < island.getWidth() && newYPosition >=0)){
+                        toMoveAnimalList.add(this);
+                        island.getCell(newXPosition,newYPosition).setThoseHoCameAnimal(toMoveAnimalList);
+                        tempAnimalList.remove(this);
+                        cell.setAnimalList(tempAnimalList);
+                    }
+                }
+            }
+            if (travelDirection == TravelDirections.LEFT){
+                if (countSteps != 0){
+                    newXPosition = xPosition;
+                    newYPosition = yPosition - countSteps;
+                    if ((newXPosition < island.getHeight() && newXPosition >=0) && (newYPosition < island.getWidth() && newYPosition >=0)){
+                        toMoveAnimalList.add(this);
+                        island.getCell(newXPosition,newYPosition).setThoseHoCameAnimal(toMoveAnimalList);
+                        tempAnimalList.remove(this);
+                        cell.setAnimalList(tempAnimalList);
+                    }
+                }
+            }
+
+        }
+    }
 
     public void reproduce(Cell cell) {
         ArrayList<Animal> animals = cell.getAnimalList();
@@ -59,7 +120,7 @@ public abstract class Animal {
         cell.setAnimalList(tempAnimalList);
     }
 
-    public void dead(){
+    public void dead() {
         if (!StatisticClass.deadCountAnimals.containsKey(this.getClass().getName())) {
             StatisticClass.deadCountAnimals.put(this.getClass().getName(), 1);
         } else {

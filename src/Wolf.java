@@ -28,9 +28,4 @@ public class Wolf extends Predator{
         diet.put("Duck",40);
         return diet;
     }
-
-    @Override
-    public void move() {
-
-    }
 }

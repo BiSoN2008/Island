@@ -19,9 +19,4 @@ public class Sheep extends Herbivorous  {
         diet.put("Plants",100);
         return diet;
     }
-
-    @Override
-    public void move() {
-
-    }
 }

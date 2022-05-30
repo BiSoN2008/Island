@@ -24,10 +24,4 @@ public class Boa extends Predator{
         diet.put("Duck",10);
         return diet;
     }
-
-
-    @Override
-    public void move() {
-
-    }
 }

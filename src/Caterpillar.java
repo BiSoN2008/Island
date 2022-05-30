@@ -8,7 +8,7 @@ public class Caterpillar extends Herbivorous{
         this.maxCountInCage = 1000;
         this.speed = 0;
         this.maxCountKilogramToSaturate = 0;
-        this.healthCount = 78;
+        this.healthCount = 100;
         this.maxCountChildren = 20;
         this.chanceOfReproduction = 20;
         addDiet();
@@ -21,7 +21,7 @@ public class Caterpillar extends Herbivorous{
     }
 
     @Override
-    public void move() {
-
+    public void move(Cell cell, Island island) {
+        //не ходят.
     }
 }

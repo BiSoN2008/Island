@@ -1,10 +1,4 @@
-public class Plants implements Runnable{
-    public final int maxCountInCell = 200;
-    public final int weight = 1;
-
-
-    @Override
-    public void run() {
-
-    }
+public class Plants {
+    public static final int maxCountInCell = 200;
+    public static final int weight = 1;
 }

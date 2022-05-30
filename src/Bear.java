@@ -8,7 +8,7 @@ public class Bear extends Predator {
         this.maxCountInCage = 5;
         this.speed = 2;
         this.maxCountKilogramToSaturate = 80;
-        this.healthCount = 80;
+        this.healthCount = 100;
         this.maxCountChildren = 4;
         this.chanceOfReproduction = 80;
         addDiet();
@@ -27,10 +27,5 @@ public class Bear extends Predator {
         diet.put("Buffalo", 20);
         diet.put("Duck", 10);
         return diet;
-    }
-
-    @Override
-    public void move() {
-
     }
 }
