@@ -19,4 +19,5 @@ public class Horse extends Herbivorous {
         diet.put("Plants",100);
         return diet;
     }
+
 }
